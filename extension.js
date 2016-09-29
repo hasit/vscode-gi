@@ -1,3 +1,6 @@
+var fs = require('fs');
+var path = require('path');
+
 var vscode = require('vscode');
 var axios = require('axios');
 
@@ -13,9 +16,9 @@ function activate(context) {
                 rawList = rawList.replace(/(\r\n|\n|\r)/gm, ",");
                 var formattedList = rawList.split(',');
 
-                var options = {
+                const options = {
                     ignoreFocusOut: false,
-                    placeHolder: 'Search Operating Systems, IDEs, or Programming Languages'
+                    placeHolder: 'Search Operating Systems, IDEs, or Programming Languages',
                 };
 
                 vscode.window.showQuickPick(formattedList, options)
@@ -23,12 +26,74 @@ function activate(context) {
                         vscode.window.showInformationMessage('You picked ' + val);
                         axios.get(giURL + val)
                             .then(function (response) {
-                                console.log(response.data);
+                                makeFile(response.data);
                             })
                             .catch(function (err) {
                                 console.log(err);
-                            })
+                            });
                     });
+
+                function makeFile(content) {
+                    const choices = [
+                        { label: 'Overwrite', description: `Overwrite current .gitignore` },
+                        { label: 'Append', description: 'Append to current .gitignore' }
+                    ];
+
+                    const options = {
+                        matchOnDescription: true,
+                        placeHolder: "A .gitignore file already exists in your current working directory. What would you like to do?"
+                    };
+
+                    var giFile = path.join(vscode.workspace.rootPath, '.gitignore');
+
+                    fs.access(giFile, fs.F_OK, function (err) {
+                        if (!err) {
+                            console.log('.gitinore already exits');
+                            vscode.window.showQuickPick(choices, options)
+                                .then(function (val) {
+                                    console.log(val.label);
+                                    if (!val) {
+                                        return;
+                                    }
+                                    if (val.label === 'Overwrite') {
+                                        writeToFile(content, true);
+                                        vscode.window.showInformationMessage('.gitignore created');
+                                        return;
+                                    }
+                                    if (val.label === 'Append') {
+                                        writeToFile(content, false);
+                                        vscode.window.showInformationMessage('.gitignore appended');
+                                        return;
+                                    }
+                                });
+                        } else {
+                            console.log('.gitinore does not exit');
+                            writeToFile(content, true);
+                            vscode.window.showInformationMessage('.gitignore created');
+                            return;
+                        }
+                    });
+
+                    function writeToFile(content, flag) {
+                        if (flag === true) {
+                            fs.writeFileSync(giFile, content, 'utf-8', function (err) {
+                                if (err) {
+                                    console.log('Failed to write to .gitignore');
+                                } else {
+                                    console.log('.gitignore created');
+                                }
+                            });
+                        } else {
+                            fs.appendFileSync(giFile, content, 'utf-8', function (err) {
+                                if (err) {
+                                    console.log('Failed to append to .gitignore');
+                                } else {
+                                    console.log('.gitignore appended');
+                                }
+                            });
+                        }
+                    }
+                }
             })
             .catch(function (err) {
                 console.log(err);
