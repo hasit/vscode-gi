@@ -36,3 +36,7 @@ You can search for (yay `showQuickPick()`!) the operating system, IDE, or progra
 ## Contributing
 
 This is my very first extention for Visual Code Studio. If you find the code to be bug ridden, with mistakes or just plain old amazing, send in a word. You are welcome to comment/ask questions/post issues/send PRs on the [Github page](https://github.com/hasit/vscode-gi). 
+
+## Note
+
+This is in no way associated with [gitignore.io](https://www.gitignore.io). 'gi' only uses the API exposed by [gitignore.io](https://www.gitignore.io). I made this extension as a learning experience.
