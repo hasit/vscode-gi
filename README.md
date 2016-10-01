@@ -5,7 +5,7 @@
 ![Usage of 'gi'](assets/gi.gif)
 
 ## Install
-For MacOS press `Cmd+P` and or Linux/Windows press `Ctrl+P` to launch VS Code Quick Open, paste the following command, and press enter.
+Press `Cmd+P` for MacOS and `Ctrl+P` for Linux/Windows to launch VS Code Quick Open, paste the following command, and press enter.
 
 ```
 ext install gi
@@ -25,7 +25,7 @@ Once you press enter, 'gi' will load a list of operating systems, IDEs, and prog
 
 ![List presented by gi](assets/list.png)
 
-You can search for (yay `showQuickPick()`!) the operating system, IDE, or programming lanuage you want to generate a .gitignore file for. Even though I would like for you (the user) to be able to pick multiple items from the list, it is currenly not supported by [vscode namespace API](https://code.visualstudio.com/docs/extensionAPI/vscode-api). I have put in a feature request [here](https://github.com/Microsoft/vscode/issues/12925), but it seems that it has been on the todo list for quite some time now [here](https://github.com/Microsoft/vscode/issues/238).
+You can search for (yay `showQuickPick()`!) the operating system, IDE, or programming lanuage you want to generate a .gitignore file for. Even though I would like you (the user) to be able to pick multiple items from the list, it is currenly not supported by [vscode namespace API](https://code.visualstudio.com/docs/extensionAPI/vscode-api). I have put in a feature request [here](https://github.com/Microsoft/vscode/issues/12925), but it seems that it has been on the todo list for quite some time now [here](https://github.com/Microsoft/vscode/issues/238).
 
 ## Todo 
 
@@ -35,7 +35,7 @@ You can search for (yay `showQuickPick()`!) the operating system, IDE, or progra
 
 ## Contributing
 
-This is my very first extention for Visual Code Studio. If you find the code to be bug ridden, with mistakes or just plain old amazing, send in a word. You are welcome to comment/ask questions/post issues/send PRs on the [Github page](https://github.com/hasit/vscode-gi). 
+This is my very first extention for Visual Studio Code. If you find the code to be bug ridden, with mistakes or just plain old amazing, send in a word. You are welcome to comment/ask questions/post issues/send PRs on the [Github page](https://github.com/hasit/vscode-gi). 
 
 ## Note
 
