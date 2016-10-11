@@ -5,6 +5,7 @@
     "version": "0.1.5",
     "publisher": "rubbersheep",
     "license": "MIT",
+    "icon": "assets/icons.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/hasit/vscode-gi"
