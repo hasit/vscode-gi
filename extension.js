@@ -3,12 +3,14 @@ var path = require('path');
 
 var vscode = require('vscode');
 var axios = require('axios');
+var errorEx = require('error-ex');
 
 function activate(context) {
     console.log('Extension "gi" is now active!');
 
     var disposable = vscode.commands.registerCommand('extension.gi', function () {
         var giURL = 'https://www.gitignore.io/api/';
+        var giError = new errorEx('giError'); 
 
         axios.get(giURL + 'list')
             .then(function (response) {
@@ -23,6 +25,10 @@ function activate(context) {
 
                 vscode.window.showQuickPick(formattedList, options)
                     .then(function (val) {
+                        if (val === undefined) {
+                            var err = new giError('EscapeException');
+                            throw err;
+                        }
                         vscode.window.showInformationMessage('You picked ' + val);
                         axios.get(giURL + val)
                             .then(function (response) {
@@ -34,10 +40,13 @@ function activate(context) {
                     });
 
                 function makeFile(content) {
-                    const choices = [
-                        { label: 'Overwrite', description: `Overwrite current .gitignore` },
-                        { label: 'Append', description: 'Append to current .gitignore' }
-                    ];
+                    const choices = [{
+                        label: 'Overwrite',
+                        description: `Overwrite current .gitignore`
+                    }, {
+                        label: 'Append',
+                        description: 'Append to current .gitignore'
+                    }];
 
                     const options = {
                         matchOnDescription: true,
@@ -104,5 +113,5 @@ function activate(context) {
 }
 exports.activate = activate;
 
-function deactivate() { }
+function deactivate() {}
 exports.deactivate = deactivate;
