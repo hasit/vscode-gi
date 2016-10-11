@@ -10,7 +10,7 @@ function activate(context) {
 
     var disposable = vscode.commands.registerCommand('extension.gi', function () {
         var giURL = 'https://www.gitignore.io/api/';
-        var giError = new errorEx('giError'); 
+        var giError = new errorEx('giError');
 
         axios.get(giURL + 'list')
             .then(function (response) {
@@ -26,10 +26,11 @@ function activate(context) {
                 vscode.window.showQuickPick(formattedList, options)
                     .then(function (val) {
                         if (val === undefined) {
+                            vscode.window.setStatusBarMessage('gi escaped', 3000);
                             var err = new giError('EscapeException');
                             throw err;
                         }
-                        vscode.window.showInformationMessage('You picked ' + val);
+                        vscode.window.setStatusBarMessage('You picked ' + val, 3000);
                         axios.get(giURL + val)
                             .then(function (response) {
                                 makeFile(response.data);
@@ -60,13 +61,17 @@ function activate(context) {
                             console.log('.gitinore already exits');
                             vscode.window.showQuickPick(choices, options)
                                 .then(function (val) {
-                                    console.log(val.label);
+                                    if (val === undefined) {
+                                        var err = new giError('EscapeException');
+                                        vscode.window.setStatusBarMessage('gi escaped', 3000);
+                                        throw err;
+                                    }
                                     if (!val) {
                                         return;
                                     }
                                     if (val.label === 'Overwrite') {
                                         writeToFile(content, true);
-                                        vscode.window.showInformationMessage('.gitignore created');
+                                        vscode.window.showInformationMessage('.gitignore overwritten');
                                         return;
                                     }
                                     if (val.label === 'Append') {
@@ -113,5 +118,5 @@ function activate(context) {
 }
 exports.activate = activate;
 
-function deactivate() {}
+function deactivate() { }
 exports.deactivate = deactivate;
