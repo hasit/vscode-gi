@@ -1,7 +1,6 @@
+.DS_Store
 
 # Created by https://www.gitignore.io/api/node
-
-.DS_Store
 
 ### Node ###
 # Logs
@@ -48,3 +47,9 @@ jspm_packages
 
 # Output of 'npm pack'
 *.tgz
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
