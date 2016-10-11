@@ -2,7 +2,7 @@
     "name": "gi",
     "displayName": "gi",
     "description": "Generating .gitignore files made easy",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "rubbersheep",
     "license": "MIT",
     "repository": {
