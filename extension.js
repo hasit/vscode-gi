@@ -61,13 +61,10 @@ function activate(context) {
                             console.log('.gitinore already exits');
                             vscode.window.showQuickPick(choices, options)
                                 .then(function (val) {
-                                    if (val === undefined) {
+                                    if (!val || val === undefined) {
                                         var err = new giError('EscapeException');
                                         vscode.window.setStatusBarMessage('gi escaped', 3000);
                                         throw err;
-                                    }
-                                    if (!val) {
-                                        return;
                                     }
                                     if (val.label === 'Overwrite') {
                                         writeToFile(content, true);
@@ -98,6 +95,9 @@ function activate(context) {
                                 }
                             });
                         } else {
+                            var lines = content.split('\n');
+                            lines.splice(0,2);
+                            content = lines.join('\n');
                             fs.appendFileSync(giFile, content, 'utf-8', function (err) {
                                 if (err) {
                                     console.log('Failed to append to .gitignore');
