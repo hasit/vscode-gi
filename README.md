@@ -47,5 +47,5 @@ This is my very first extention for Visual Studio Code. If you find the code to 
 
 `gi` only uses the API exposed by [gitignore.io](https://www.gitignore.io). I made this extension as a learning experience.
 
-I would like to thank [Joe Blau](https://joeblau.com) for this work on [gitignore.io](https://www.gitignore.io)'s API an [Jason Long](http://www.jasonlong.me) who helped me with the icon.
+I would like to thank [Joe Blau](https://joeblau.com) for this work on [gitignore.io](https://www.gitignore.io)'s API and [Jason Long](http://www.jasonlong.me) who helped me with the icon.
 
