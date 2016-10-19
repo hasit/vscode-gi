@@ -1,5 +1,9 @@
 # gi
 
+[![gi version](https://vsmarketplacebadge.apphb.com/version-short/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi)
+[![gi installs](https://vsmarketplacebadge.apphb.com/installs/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi)
+[![gi ratings](https://vsmarketplacebadge.apphb.com/rating-short/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi#review-details)
+
 `gi` stands for 'gitignore'. It is an extension for generating .gitignore files from inside Visual Studio Code. `gi` uses the [gitignore.io](https://www.gitignore.io) API to keep the list of operating systems, IDEs and programming languages updated.
 
 ![Usage of gi](assets/gi.gif)
