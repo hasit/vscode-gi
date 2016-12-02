@@ -41,7 +41,6 @@ At any moment you can press the `Escape - <esc>` key to stop `gi`.
 
 - Add tests.
 - Add multi-select support to list.
-- Overall code clean up and better structure.
 
 ## Contributing
 
@@ -49,7 +48,7 @@ This is my very first extention for Visual Studio Code. If you find the code to 
 
 ## Note
 
-`gi` only uses the API exposed by [gitignore.io](https://www.gitignore.io). I made this extension as a learning experience.
+`gi` uses the API exposed by [gitignore.io](https://www.gitignore.io). I made this extension as a learning experience.
 
 I would like to thank [Joe Blau](https://joeblau.com) for this work on [gitignore.io](https://www.gitignore.io)'s API and [Jason Long](http://www.jasonlong.me) who helped me with the icon.
 
