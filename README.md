@@ -32,8 +32,8 @@ Once you press enter, `gi` will load a list of operating systems, IDEs, and prog
 You can search for (yay `showQuickPick()`!) the operating system, IDE, or programming lanuage you want to generate a .gitignore file for. Even though I would like you (the user) to be able to pick multiple items from the list, it is currenly not supported by [vscode namespace API](https://code.visualstudio.com/docs/extensionAPI/vscode-api). I have put in a feature request [here](https://github.com/Microsoft/vscode/issues/12925), but it seems that it has been on the todo list for quite some time now [here](https://github.com/Microsoft/vscode/issues/238).
 
 `gi` will show the result of your actions in two places depending on importance.
-1. InformationMessage - InformationMessage in the toast that slides down and required an action from you. High level details such as '.gitignore created' are shown here.
-2. StatusBarMessage - Status bar (View -> Toggle Status Bar) is at the bottom of the window. Low level details such as 'You picked node' are shown here.
+1. InformationMessage - InformationMessage is the toast that slides down and requires an action from you. High level details such as '.gitignore created' are shown here.
+2. StatusBarMessage - Status bar (View -> Toggle Status Bar) is at the bottom of the window. Low level details such as 'You picked node.' are shown here.
 
 At any moment you can press the `Escape - <esc>` key to stop `gi`.
 
@@ -50,5 +50,5 @@ This is my very first extention for Visual Studio Code. If you find the code to 
 
 `gi` uses the API exposed by [gitignore.io](https://www.gitignore.io). I made this extension as a learning experience.
 
-I would like to thank [Joe Blau](https://joeblau.com) for this work on [gitignore.io](https://www.gitignore.io)'s API and [Jason Long](http://www.jasonlong.me) who helped me with the icon.
+I would like to thank [Joe Blau](https://joeblau.com) for this work on [gitignore.io](https://www.gitignore.io)'s API and [Jason Long](http://www.jasonlong.me) for his help with creating the awesome icon used by `gi`.
 
