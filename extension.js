@@ -58,7 +58,7 @@ function activate(context) {
 
                     fs.access(giFile, fs.F_OK, function (err) {
                         if (!err) {
-                            console.log('.gitinore already exits');
+                            console.log('.gitignore already exits');
                             vscode.window.showQuickPick(choices, options)
                                 .then(function (val) {
                                     if (!val || val === undefined) {
@@ -78,7 +78,7 @@ function activate(context) {
                                     }
                                 });
                         } else {
-                            console.log('.gitinore does not exit');
+                            console.log('.gitignore does not exit');
                             writeToFile(content, true);
                             vscode.window.showInformationMessage('.gitignore created');
                             return;
