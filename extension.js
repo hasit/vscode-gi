@@ -58,7 +58,7 @@ function activate(context) {
 
                     fs.access(giFile, fs.F_OK, function (err) {
                         if (!err) {
-                            console.log('.gitignore already exits');
+                            console.log('.gitignore already exists');
                             vscode.window.showQuickPick(choices, options)
                                 .then(function (val) {
                                     if (!val || val === undefined) {
@@ -78,7 +78,7 @@ function activate(context) {
                                     }
                                 });
                         } else {
-                            console.log('.gitignore does not exit');
+                            console.log('.gitignore does not exist');
                             writeToFile(content, true);
                             vscode.window.showInformationMessage('.gitignore created');
                             return;
@@ -95,9 +95,6 @@ function activate(context) {
                                 }
                             });
                         } else {
-                            var lines = content.split('\n');
-                            lines.splice(0,2);
-                            content = lines.join('\n');
                             fs.appendFileSync(giFile, content, 'utf-8', function (err) {
                                 if (err) {
                                     console.log('Failed to append to .gitignore');
