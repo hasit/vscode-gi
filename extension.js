@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var fs = require('fs');
 var path = require('path');
 
@@ -115,5 +116,5 @@ function activate(context) {
 }
 exports.activate = activate;
 
-function deactivate() { }
+function deactivate() {}
 exports.deactivate = deactivate;
