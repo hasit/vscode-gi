@@ -43,11 +43,11 @@ function activate(context) {
 
                 function makeFile(content) {
                     const choices = [{
-                        label: 'Overwrite',
-                        description: `Overwrite current .gitignore`
-                    }, {
                         label: 'Append',
                         description: 'Append to current .gitignore'
+                    }, {
+                        label: 'Overwrite',
+                        description: `Overwrite current .gitignore`
                     }];
 
                     const options = {
