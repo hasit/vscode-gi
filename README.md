@@ -25,7 +25,7 @@ gi
 
 ![Launch gi from Command Palette](assets/cp.png)
 
-Once you press enter, `gi` will load a list of operating systems, IDEs, and programming lanuages. This might take a second so bare with it.
+Once you press enter, `gi` will load a list of operating systems, IDEs, and programming lanuages. This might take a second so bear with it.
 
 ![List presented by gi](assets/list.png)
 
@@ -44,7 +44,7 @@ At any moment you can press the `Escape - <esc>` key to stop `gi`.
 
 ## Contributing
 
-This is my very first extention for Visual Studio Code. If you find the code to be bug ridden, with mistakes or just plain old amazing, send in a word. You are welcome to comment/ask questions/post issues/send PRs on the [Github page](https://github.com/hasit/vscode-gi). 
+This is my very first extension for Visual Studio Code. If you find the code to be bug ridden, with mistakes or just plain old amazing, send in a word. You are welcome to comment/ask questions/post issues/send PRs on the [Github page](https://github.com/hasit/vscode-gi). 
 
 ## Note
 
