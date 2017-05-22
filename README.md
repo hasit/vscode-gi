@@ -1,4 +1,4 @@
-# gi
+# ![vscode-icon](assets/icon-64x64.png)
 
 [![gi version](https://vsmarketplacebadge.apphb.com/version-short/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi) [![gi installs](https://vsmarketplacebadge.apphb.com/installs/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi) [![gi ratings](https://vsmarketplacebadge.apphb.com/rating-short/rubbersheep.gi.svg)](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi#review-details)
 
