@@ -22,6 +22,7 @@ function activate(context) {
                 const options = {
                     ignoreFocusOut: false,
                     placeHolder: 'Search Operating Systems, IDEs, or Programming Languages',
+                    canPickMany: true,
                 };
 
                 vscode.window.showQuickPick(formattedList, options)

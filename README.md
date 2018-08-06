@@ -29,7 +29,7 @@ Once you press enter, `gi` will load a list of operating systems, IDEs, and prog
 
 ![List presented by gi](assets/list.png)
 
-You can search for (yay `showQuickPick()`!) the operating system, IDE, or programming lanuage you want to generate a .gitignore file for. Even though I would like you (the user) to be able to pick multiple items from the list, it is currenly not supported by [vscode namespace API](https://code.visualstudio.com/docs/extensionAPI/vscode-api). I have put in a feature request [here](https://github.com/Microsoft/vscode/issues/12925), but it seems that it has been on the todo list for quite some time now [here](https://github.com/Microsoft/vscode/issues/238).
+You can search for (yay `showQuickPick()`!) the operating system, IDE, or programming lanuage you want to generate a .gitignore file for. And now, you (the user) are able to pick multiple items from the list.
 
 `gi` will show the result of your actions in two places depending on importance.
 1. InformationMessage - InformationMessage is the toast that slides down and requires an action from you. High level details such as '.gitignore created' are shown here.
@@ -40,7 +40,6 @@ At any moment you can press the `Escape - <esc>` key to stop `gi`.
 ## Todo 
 
 - Add tests.
-- Add multi-select support to list.
 
 ## Contributing
 
